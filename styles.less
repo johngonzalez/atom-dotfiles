@@ -1,0 +1,53 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed.
+ *
+ * If you are unfamiliar with LESS, you can read more about it here:
+ * http://www.lesscss.org
+ */
+
+.tree-view {
+
+}
+
+// style the background and foreground colors on the atom-text-editor-element
+// itself
+atom-text-editor {
+
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow
+// expression
+atom-text-editor::shadow .cursor {
+
+}
+
+.container-icon { .fa; content: "\f0f2"}
+.action-icon { .fa; content: "\f0e7"}
+.component-icon { .fa; content: "\f12e"}
+.routes-icon { .fa; content: "\f0e8"}
+.publications-icon { .fa; content: "\f0c2"}
+.collection-icon { .fa; content: "\f1b3"}
+
+@import "packages/file-icons/styles/colors"; // to use the colours
+@import "packages/file-icons/styles/icons";  // to use the defined icons
+@import "packages/file-icons/styles/items";
+
+@{pane-tab-selector}, .icon-file-text {
+  &[data-name$="container.ts"]           { .medium-red;             } // Colours icon and filename
+  &[data-name$="container.ts"]:before   { .container-icon!important; .medium-red!important; } // Colours icon only
+  &[data-name$="actions.ts"]   { .medium-blue; } // Colours icon only
+  &[data-name$="actions.ts"]:before   { .action-icon!important; .medium-blue!important; } // Colours icon only
+  &[data-name$="view.tsx"]   { .medium-green; } // Colours icon only
+  &[data-name$="view.tsx"]:before   { .component-icon!important; .medium-green!important; } // Colours icon only
+
+  &[data-name$="layout.tsx"]   { .medium-green; } // Colours icon only
+  &[data-name$="layout.tsx"]:before   { .component-icon!important; .medium-green!important; } // Colours icon only
+
+  &[data-name$="publications.ts"]:before   { .publications-icon!important; } // Colours icon only
+  &[data-name$="collection.ts"]:before   { .collection-icon!important; } // Colours icon only
+  &[data-name$="routes.tsx"]           { .medium-yellow;             } // Colours icon and filename
+  &[data-name$="routes.tsx"]:before   { .routes-icon!important; .medium-yellow!important; } // Colours icon only
+}
